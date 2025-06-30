@@ -1,4 +1,4 @@
-// TYPING EFFECT
+    // TYPING EFFECT
 
 // Typing animation
 // Typing animation for hero heading
@@ -14,8 +14,6 @@ function type() {
   }
 }
 document.addEventListener("DOMContentLoaded", type);
-
-
 
 // TILT EFFECT
 
@@ -41,14 +39,14 @@ tiltContainer.addEventListener("mouseleave", () => {
 // // const menuToggle = document.getElementById("menuToggle");
 // //   const sideNav = document.getElementById("sideNav");
   const menuBackdrop = document.getElementById("menuBackdrop");
-// //   const body = document.body;
+  // //   const body = document.body;
 
 //   // Toggle menu
 //   menuToggle.addEventListener("click", () => {
-//     body.classList.toggle("menu-open");
-//   });
-
-//   // Close menu on backdrop click
+  //     body.classList.toggle("menu-open");
+  //   });
+  
+  //   // Close menu on backdrop click
   menuBackdrop.addEventListener("click", () => {
     body.classList.remove("menu-open");
   });
@@ -76,3 +74,36 @@ tiltContainer.addEventListener("mouseleave", () => {
   });
 });
 
+// FADE IN SCROLL JS EFFECT
+
+// Scroll-based fade-in animation
+const faders = document.querySelectorAll(".fade-in, .slide-in-left, .slide-in-right");
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+
+  faders.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add("visible");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+
+// SCROLL TRIGGERED NAVBAR EFFECT
+
+const navbar = document.getElementById("mainNavbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});

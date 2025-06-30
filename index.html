@@ -38,11 +38,11 @@
 <div class="menu-backdrop" id="menuBackdrop"></div>
 
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" id="mainNavbar">
     <div class="container nav-wrapper">
       <h1 class="logo">Mr. D</h1>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -61,7 +61,7 @@
       <p>Creative Web Developer + Brand Strategist + Forex Trader</p>
       <a href="portfolio.html" class="btn-dark arrow-btn">
         See My Work
-        <span class="circle-arrow">
+        <span class="circle-arrow slide-in-right fade-in">
             <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="11" stroke="#fff"/>
             <polyline points="10 8 14 12 10 16" stroke="#fff"/>
@@ -84,15 +84,15 @@
     <div class="container">
       <h3>What I Do</h3>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card slide-in-left">
           <h4>Web Design</h4>
           <p>Clean, responsive websites for brands and businesses.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <h4>Brand Strategy</h4>
           <p>Complete identity development to position your brand.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card slide-in-right">
           <h4>Smart Trading</h4>
           <p>Proven forex strategies with real-time insights.</p>
         </div>
@@ -101,7 +101,7 @@
   </section>
 
   <!-- Portfolio Preview -->
-  <section class="portfolio-preview">
+  <section class="portfolio-preview fade-in">
     <div class="container">
       <h3>Featured Projects</h3>
       <div class="portfolio-grid">
@@ -123,7 +123,7 @@
   </section>
 
   <!-- Testimonials Preview -->
-  <section class="testimonials-preview">
+  <section class="testimonials-preview fade-in">
     <div class="container">
       <h3>What Clients Say</h3>
       <blockquote>
@@ -154,6 +154,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js">
+  </script>
 </body>
 </html>
