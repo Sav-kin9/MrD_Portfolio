@@ -1,5 +1,14 @@
 /* === Desktop Layout Styles === */
 
+body,
+.navbar,
+.side-nav,
+.hero-section,
+.about-section {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
 /* SIDE MENU */
 
 .menu-toggle,
@@ -131,7 +140,7 @@
   z-index: 1000;
 }
 
-/* SCROLL TRIGGERED NAVBAR EFFECT */
+/* ========SCROLL TRIGGERED NAVBAR EFFECT======== */
 
 .navbar.scrolled {
   background-color: var(--color-white);
@@ -191,6 +200,43 @@
 }
 .btn-dark:hover {
   background-color: #13162e;
+}
+
+/* ========DARK MODE TOGGLE BUTTON======== */
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 1002;
+  cursor: pointer;
+  background-color: var(--color-soft-gray);
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========INSIDE MOBILE SIDE MENU======== */
+
+.mobile-theme-toggle {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.mobile-theme-toggle img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background-color: var(--color-soft-gray);
+  border-radius: 50%;
+  padding: 6px;
 }
 
 /* ========== HERO SECTION ========== */
@@ -559,3 +605,4 @@
   opacity: 1;
   transform: scale(1.05);
 }
+

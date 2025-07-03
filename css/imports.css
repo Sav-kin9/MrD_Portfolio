@@ -103,4 +103,41 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
+/* ========DARK MODE FUNCTIONALITY======== */
 
+/* === DARK MODE OVERRIDES === */
+body.dark-mode {
+  --color-white: #121212;
+  --color-soft-gray: #1e1e1e;
+  --color-dark-gray: #cccccc;
+  --color-navy: #e4e4e4;
+  --color-emerald: #00b386;
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
+}
+
+body.dark-mode .navbar,
+body.dark-mode .site-footer,
+body.dark-mode .services-section,
+body.dark-mode .testimonials-preview,
+body.dark-mode .portfolio-preview {
+  background-color: var(--color-soft-gray);
+  color: var(--color-dark-gray);
+}
+
+body.dark-mode .service-card,
+body.dark-mode .about-section {
+  background-color: #222;
+  color: #ccc;
+}
+
+body.dark-mode .btn-emerald,
+body.dark-mode .btn-dark {
+  background-color: var(--color-emerald);
+  color: #fff;
+}
+
+body.dark-mode #themeIcon,
+body.dark-mode #themeIconMobile {
+  filter: invert(1);
+}
