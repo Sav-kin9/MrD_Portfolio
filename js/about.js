@@ -1,7 +1,5 @@
-    // TYPING EFFECT
-
 // Typing effect that restarts on scroll into view
-const text = "Hello, I'm Saviour Uwem Nkanga";
+const text = "THIS IS MR.D | BUILT WITH VISION";
 const typingText = document.getElementById("typing-text");
 let index = 0;
 let isTyping = false;
@@ -44,49 +42,6 @@ const observer = new IntersectionObserver(
 observer.observe(typingText);
 
 
-// TILT EFFECT
-
-const tiltContainer = document.getElementById("tilt-container");
-const tiltImage = document.getElementById("tilt-image");
-
-tiltContainer.addEventListener("mousemove", (e) => {
-  const bounds = tiltContainer.getBoundingClientRect();
-  const centerX = bounds.left + bounds.width / 2;
-  const centerY = bounds.top + bounds.height / 2;
-  const deltaX = (e.clientX - centerX) / 20;
-  const deltaY = (e.clientY - centerY) / 20;
-
-  tiltImage.style.transform = `rotateY(${deltaX}deg) rotateX(${ -deltaY }deg)`;
-});
-
-tiltContainer.addEventListener("mouseleave", () => {
-  tiltImage.style.transform = "rotateY(0deg) rotateX(0deg)";
-});
-
-// // ANIMATION TILT EFFECT
-
-// // const menuToggle = document.getElementById("menuToggle");
-// //   const sideNav = document.getElementById("sideNav");
-  const menuBackdrop = document.getElementById("menuBackdrop");
-  // //   const body = document.body;
-
-//   // Toggle menu
-//   menuToggle.addEventListener("click", () => {
-  //     body.classList.toggle("menu-open");
-  //   });
-  
-  //   // Close menu on backdrop click
-  menuBackdrop.addEventListener("click", () => {
-    body.classList.remove("menu-open");
-  });
-
-  // Optional: Close when a link inside menu is clicked
-  document.querySelectorAll(".side-nav a").forEach(link => {
-    link.addEventListener("click", () => {
-      body.classList.remove("menu-open");
-    });
-  });
-
 // SIDE MENU JS CODE
 
   const menuToggle = document.getElementById("menuToggle");
@@ -102,6 +57,21 @@ tiltContainer.addEventListener("mouseleave", () => {
     body.classList.remove("menu-open");
   });
 });
+
+//   // Close menu on backdrop click
+
+  const menuBackdrop = document.getElementById("menuBackdrop");
+
+  menuBackdrop.addEventListener("click", () => {
+    body.classList.remove("menu-open");
+  });
+
+  // Optional: Close when a link inside menu is clicked
+  document.querySelectorAll(".side-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      body.classList.remove("menu-open");
+    });
+  });
 
 // FADE IN SCROLL JS EFFECT
 
@@ -125,6 +95,7 @@ window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
 
+
 // SCROLL TRIGGERED NAVBAR EFFECT
 
 const navbar = document.getElementById("mainNavbar");
@@ -136,6 +107,7 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+
 
 // ========DARK MODE TOGGLE BUTTON========
 
