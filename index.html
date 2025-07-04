@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr. D – Creative Developer & Trader</title>
-  <link rel="stylesheet" href="css/imports.css" />
+  <meta name="description" content="Professional portfolio of Mr. D - Web Developer, Brand Strategist, and Forex Trader">
+  <meta name="keywords" content="web development, branding, forex trading, portfolio">
+  <meta name="author" content="Mr. D">
+  <title>Mr. D | Creative Web Developer & Brand Strategist</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/reps.css" />
-  <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!-- ANTON FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!--- MONTSERRAT FONT --->
 </head>
 <body>
 
     <!-- Side Menu Toggle Button -->
-<div class="menu-toggle" id="menuToggle">
-  <div class="toggle-icon">
-    <span class="dot"></span>
-    <span class="dash"></span>
-    <span class="dot"></span>
+<!-- Added aria attributes for better accessibility -->
+  <div class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sideNav">
+    <div class="toggle-icon">
+      <span class="dot"></span>
+      <span class="dash"></span>
+      <span class="dot"></span>
+    </div>
   </div>
-</div>
+
 
 <!-- Side Menu Navigation -->
-<nav class="side-nav" id="sideNav">
+<nav class="side-nav" id="sideNav" aria-hidden="true">
   <ul>
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" aria-current>Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
@@ -34,20 +38,22 @@
     <li><a href="login.html" class="btn-emerald">Login</a></li>
 
     <li class="mobile-theme-toggle">
-      <img id="themeIconMobile" src="images/moon-icon-light.svg" alt="Toggle Theme" />
+        <button id="themeIconMobile" aria-label="Toggle dark mode">
+          <img src="images/moon-icon-light.svg" alt="" />
+        </button>
     </li>
   </ul>
 </nav>
 
 <!-- Backdrop Overlay -->
-<div class="menu-backdrop" id="menuBackdrop"></div>
+<div class="menu-backdrop" id="menuBackdrop" tabindex="-1"></div>
 
   <!-- Navbar -->
   <nav class="navbar" id="mainNavbar">
     <div class="container nav-wrapper">
       <h1 class="logo">Mr. D</h1>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -58,9 +64,9 @@
   </nav>
 
     <!-- Dark/Light Mode Toggle -->
-  <div class="theme-toggle" id="themeToggle">
-    <img id="themeIcon" src="images/moon-icon-light.svg" alt="Toggle Theme" />
-  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <img id="themeIcon" src="images/moon-icon-light.svg" alt="" />
+  </button>
 
   <!-- Hero Section -->
 <header class="hero-section">
@@ -84,8 +90,9 @@
 
     <!-- Right: Image with tilt -->
     <div class="hero-image" id="tilt-container">
-      <img src="images/MRD.png" alt="Mr. D Profile Picture" id="tilt-image" />
+      <img src="images/MRD.png" alt="Mr. D professional portrait" id="tilt-image" loading="lazy" />
     </div>
+
   </div>
 </header>
 
@@ -116,15 +123,15 @@
       <h3>Featured Projects</h3>
       <div class="portfolio-grid">
         <div class="project-card">
-          <img src="images/project1.jpg" alt="Project 1" />
+          <img src="images/project1.jpg" alt="UrbanNest Booking Site project" loading="lazy"  />
           <h4>UrbanNest Booking Site</h4>
         </div>
         <div class="project-card">
-          <img src="images/project2.jpg" alt="Project 2" />
+          <img src="images/project2.jpg" alt="VaultaBank Banking Project" loading="lazy"  />
           <h4>Vaulta Banking Site</h4>
         </div>
         <div class="project-card">
-          <img src="images/project3.jpg" alt="Project 3" />
+          <img src="images/project3.jpg" alt="Mr. D Portfolio Website Project" loading="lazy"  />
           <h4>Personal Branding Kit</h4>
         </div>
       </div>

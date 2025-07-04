@@ -4,74 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About – Mr. D</title>
+  <meta name="description" content="Learn about Mr. D's journey from adversity to success as a web developer, brand strategist, and forex trader">
+  <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/imports.css" />
-  <link rel="stylesheet" href="css/reps.css" />
-  <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="icon" href="images/favicon.png" type="image/x-icon" />
 </head>
 <body>
-
-    <style>
-        #typing-text {
-            color: #fff;
-        }
-    </style>
-
-    <!-- Side Menu Toggle Button -->
-<div class="menu-toggle" id="menuToggle">
-  <div class="toggle-icon">
-    <span class="dot"></span>
-    <span class="dash"></span>
-    <span class="dot"></span>
+  <!-- Side Menu -->
+  <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+    <div class="toggle-icon">
+      <span class="dot"></span>
+      <span class="dash"></span>
+      <span class="dot"></span>
+    </div>
   </div>
-</div>
 
-<!-- Side Menu Navigation -->
-<nav class="side-nav" id="sideNav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="login.html" class="btn-emerald">Login</a></li>
+  <nav class="side-nav" id="sideNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="btn-emerald">Login</a></li>
+      <li class="mobile-theme-toggle">
+        <button id="themeIconMobile" aria-label="Toggle theme">
+          <img src="images/moon-icon-light.svg" alt="" loading="lazy" />
+        </button>
+      </li>
+    </ul>
+  </nav>
 
-    <li class="mobile-theme-toggle">
-        <img id="themeIconMobile" src="images/moon-icon-light.svg" alt="Toggle Theme" loading="lazy" />
-    </li>
-  </ul>
-</nav>
-
-<!-- Backdrop Overlay -->
-<div class="menu-backdrop" id="menuBackdrop"></div>
+  <div class="menu-backdrop" id="menuBackdrop" tabindex="-1"></div>
 
   <!-- Navbar -->
   <nav class="navbar" id="mainNavbar">
     <div class="container nav-wrapper">
-      <h1 class="logo">Mr. D</h1>
+      <h1 class="logo"><a href="index.html">Mr. D</a></h1>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="contact.html" class="btn-emerald">Contact</a></li>
-
-        <li class="mobile-theme-toggle">
-          <img id="themeIconMobile" src="images/moon-icon-light.svg" alt="Toggle Theme" loading="lazy" />
-        </li>
-
       </ul>
     </div>
   </nav>
 
-    <!-- Dark/Light Mode Toggle -->
-  <div class="theme-toggle" id="themeToggle">
-    <img id="themeIcon" src="images/moon-icon.svg" alt="Toggle Theme" />
-  </div>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <img id="themeIcon" src="images/moon-icon-light.svg" alt="" />
+  </button>
 
-  <!-- Header Section with Background Image and Overlay -->
+  <!-- Hero Section -->
   <header class="about-hero">
     <div class="overlay"></div>
     <div class="hero-text-center">
@@ -79,122 +65,49 @@
     </div>
   </header>
 
-  <!-- Main Content Sections -->
+  <!-- Main Content -->
   <main class="about-content">
     <section class="about-section slide-in-left">
-        <h2> My Journey | Becoming Mr. D</h2>
-        <p>
-            It all started half a decade ago. A young man pulled and weighed down by life's turbulences, live grievances, and life itself.
-            A young man who had a burning desire not to remain where he was today, tomorrow.
-            A young man who would dare look life in the eye and say <strong>f*** you, b****</strong>.
-        </p>
-
-        <p>
-            A young man who dared to ask the unasked questions, to speak the unspoken truths—the kind that even the walls fear to hear.
-            A young man who considered the consequences of wanting something better for himself in the society of today,
-            but still chose to <strong>f*** with life and face it all head-on</strong>.
-        </p>
-
-        <p>
-            Life happens to everyone. But only a few ever dare to step up, to take bold steps despite the consequences, 
-            the self-doubt, and the criticism—even from the people they think love them the most.
-            Only a few ever rise through the ashes that burned them—ashes caused by decisions their predecessors made,
-            shaping their lives without consent.
-        </p>
-
-        <p>
-            <strong>The name Mr. D</strong> was born out of a thirst and hunger for something more.
-            I was a nobody—and I believed I was a nobody—but even while being a nobody, I took the bold step to make life happen for me.
-        </p>
-
-        <p>
-            If you ask me how I got to where I am today, the answer isn’t fame, hustle, or even sheer persistence. 
-            It’s one name: <strong>GOD</strong>.
-            Forget the efficacies and the sheer perspicacity and determination. 
-            <strong>If not for God, nothing for sup.</strong>
-        </p>
-</section>
-
+      <h2>My Journey | Becoming Mr. D</h2>
+      <p>It all started half a decade ago. A young man pulled and weighed down by life's turbulences, live grievances, and life itself. A young man who had a burning desire not to remain where he was today, tomorrow. A young man who would dare look life in the eye and say <strong>f*** you, b****</strong>.</p>
+      <p>A young man who dared to ask the unasked questions, to speak the unspoken truths—the kind that even the walls fear to hear. A young man who considered the consequences of wanting something better for himself in the society of today, but still chose to <strong>f*** with life and face it all head-on</strong>.</p>
+      <p><strong>The name Mr. D</strong> was born out of a thirst and hunger for something more. I was a nobody—and I believed I was a nobody—but even while being a nobody, I took the bold step to make life happen for me.</p>
+    </section>
 
     <section class="about-section fade-in">
       <h2>My Mission</h2>
-        <p>
-            My mission is to take raw potential — the kind that society overlooks — and forge it into something undeniable.
-            Whether it's building brands that disrupt or trading setups that outperform, my goal is simple:
-            to create value, leave impact, and show the underdogs what’s possible when you stop waiting and start building.
-        </p>
-        <p>
-            I believe in building from the ground up — with clarity, with creativity, and with God. Every brand I touch, every chart I trade, 
-            is a reflection of the fire I carry and the freedom I’ve fought for. This isn’t work for me. This is war — and I play to win.
-        </p>
+      <p>My mission is to take raw potential — the kind that society overlooks — and forge it into something undeniable. Whether it's building brands that disrupt or trading setups that outperform, my goal is simple: to create value, leave impact, and show the underdogs what's possible when you stop waiting and start building.</p>
     </section>
 
     <section class="about-section slide-in-right">
       <h2>What I Do</h2>
-        <p>
-            I design clean, conversion-driven websites and visual identities for bold businesses, creators, and dreamers.
-            Brands that don't just look good — but move people to act.
-        </p>
-        <p>
-            On the flip side, I also trade smart money concepts — analyzing the charts with precision, 
-            building systems that work even when emotions don’t. I don't teach hype. I teach process. 
-            And I build platforms that align with vision.
-        </p>
+      <p>I design clean, conversion-driven websites and visual identities for bold businesses, creators, and dreamers. Brands that don't just look good — but move people to act.</p>
+      <p>On the flip side, I also trade smart money concepts — analyzing the charts with precision, building systems that work even when emotions don't. I don't teach hype. I teach process. And I build platforms that align with vision.</p>
     </section>
 
     <section class="about-section slide-in-left">
-      <h2>Who I’ve Worked With</h2>
-            <p>
-                Over the years, I’ve collaborated with a wide range of individuals, startups, and firms across various industries — from tech and branding to financial markets. While I prefer to keep the identities of many of my personal clients confidential, I do reveal partnerships where mutual agreement permits.
-            </p>
-
-            <p>
-                One of my most notable ongoing collaborations is with <strong>Contour Trading Firm</strong>, a relationship built on trust, value, and results. 
-                I've also contributed to projects for firms such as <strong>Ryze Funded</strong> and <strong>Express Funded</strong>, among others.
-            </p>
-
-            <div class="clients-logos">
-                <img src="images/clients/contour.png" alt="Contour Trading Firm" />
-                <img src="images/clients/ryze.png" alt="Ryze Funded" />
-                <img src="images/clients/express.png" alt="Express Funded" />
-                <!-- Add more logos as needed -->
-            </div>
-
-            <p>
-                My approach is always professional, focused, and tailored — and I continue to work with a selective list of clients who understand the value of strategic creativity and execution.
-            </p>
+      <h2>Who I've Worked With</h2>
+      <p>Over the years, I've collaborated with a wide range of individuals, startups, and firms across various industries — from tech and branding to financial markets.</p>
+      <div class="clients-logos">
+        <img src="images/clients/project1.jpg" alt="Contour Trading Firm" loading="lazy" />
+        <img src="images/clients/project2.jpg" alt="Ryze Funded" loading="lazy" />
+        <img src="images/clients/project3.jpg" alt="Express Funded" loading="lazy" />
+      </div>
     </section>
 
     <section class="about-section fade-in">
       <h2>What Makes Me Different</h2>
-        <p>
-            I didn’t learn this from luxury. I learned this from hunger. 
-            Every click, every chart, every headline is backed by real-world pressure — and purpose.
-        </p>
-        <p>
-            I bring strategy to design. I bring <span class="highlight">structure to chaos.</span> I bring <span class="highlight"> soul into spaces</span> most people leave soulless. 
-            My work is personal — because my brand is built on scars, not just skills.
-        </p>
-        <p>
-            Most people design for clients. I design for transformation.
-        </p>
+      <p>I didn't learn this from luxury. I learned this from hunger. Every click, every chart, every headline is backed by real-world pressure — and purpose.</p>
+      <p>I bring strategy to design. I bring <span class="highlight">structure to chaos.</span> I bring <span class="highlight">soul into spaces</span> most people leave soulless. My work is personal — because my brand is built on scars, not just skills.</p>
     </section>
 
     <section class="about-section slide-in-right">
-      <h2>Let’s Work</h2>
-        <p>
-            Whether you’re ready to build a brand, design a platform, or grow your trading mindset — I’m not here to waste your time.
-            I’m here to get results. Real ones.
-        </p>
-        <p>
-            If you’re bold, intentional, and done playing small... we should talk. Because when we work together, 
-            we don’t just make websites or charts. We make impact.
-        </p>
-        <a href="contact.html" class="btn-dark">Let’s Get You Started</a>
+      <h2>Let's Work</h2>
+      <p>Whether you're ready to build a brand, design a platform, or grow your trading mindset — I'm not here to waste your time. I'm here to get results. Real ones.</p>
+      <a href="contact.html" class="btn-dark">Let's Get You Started</a>
     </section>
   </main>
 
   <script src="js/about.js"></script>
-  <script src="js/darkmode.js"></script>
 </body>
 </html>
