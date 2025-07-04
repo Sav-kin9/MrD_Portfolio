@@ -117,12 +117,12 @@ const themeIconMobile = document.getElementById('themeIconMobile');
 function setTheme(mode) {
   if (mode === 'dark') {
     document.body.classList.add('dark-mode');
-    themeIcon.src = 'images/sun-icon.svg';
-    if (themeIconMobile) themeIconMobile.src = 'images/sun-icon.svg';
+    themeIcon.src = 'images/sun-icon-dark.svg';
+    if (themeIconMobile) themeIconMobile.src = 'images/sun-icon-dark.svg';
   } else {
     document.body.classList.remove('dark-mode');
-    themeIcon.src = 'images/moon-icon.svg';
-    if (themeIconMobile) themeIconMobile.src = 'images/moon-icon.svg';
+    themeIcon.src = 'images/moon-icon-light.svg';
+    if (themeIconMobile) themeIconMobile.src = 'images/moon-icon-light.svg';
   }
   localStorage.setItem('theme', mode);
 }

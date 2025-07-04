@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotateY(0deg);
   }
   50% {
-    transform: rotateY(10deg);
+    transform: rotateY(15deg);
   }
   100% {
     transform: rotateY(0deg);
@@ -140,4 +140,18 @@ body.dark-mode .btn-dark {
 body.dark-mode #themeIcon,
 body.dark-mode #themeIconMobile {
   filter: invert(1);
+}
+
+.theme-toggle {
+  background-color: rgba(255, 255, 255, 0.8); /* Light background */
+}
+
+body.dark-mode .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight glow in dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .mobile-theme-toggle img {
+  filter: none; /* In dark mode, icon already suits dark background */
+  background-color: rgba(255, 255, 255, 0.15); /* Slight glow for clarity */
 }

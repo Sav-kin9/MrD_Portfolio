@@ -184,4 +184,8 @@
   .hero-image img {
     animation: continuous-tilt 5s infinite ease-in-out;
   }
+
+  .theme-toggle {
+    display: none;
+  }
 }
