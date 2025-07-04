@@ -1,0 +1,94 @@
+/* ========DARK MODE TOGGLE BUTTON======== */
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 1002;
+  cursor: pointer;
+  background-color: var(--color-soft-gray);
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========INSIDE MOBILE SIDE MENU======== */
+
+.mobile-theme-toggle {
+  text-align: left;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-theme-toggle img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2); /* ✨ Light bg inside dark side nav */
+  border-radius: 50%;
+  padding: 6px;
+  filter: invert(1); /* Makes white icons dark */
+  transition: all 0.3s ease;
+}
+
+/* ========DARK MODE FUNCTIONALITY======== */
+
+/* === DARK MODE OVERRIDES === */
+body.dark-mode {
+  --color-white: #121212;
+  --color-soft-gray: #1e1e1e;
+  --color-dark-gray: #cccccc;
+  --color-navy: #e4e4e4;
+  --color-emerald: #00b386;
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
+}
+
+body.dark-mode .navbar,
+body.dark-mode .site-footer,
+body.dark-mode .services-section,
+body.dark-mode .testimonials-preview,
+body.dark-mode .portfolio-preview {
+  background-color: var(--color-soft-gray);
+  color: var(--color-dark-gray);
+}
+
+body.dark-mode .service-card,
+body.dark-mode .about-section {
+  background-color: #222;
+  color: #ccc;
+}
+
+body.dark-mode .btn-emerald,
+body.dark-mode .btn-dark {
+  background-color: var(--color-emerald);
+  color: #fff;
+}
+
+body.dark-mode #themeIcon,
+body.dark-mode #themeIconMobile {
+  filter: invert(1);
+}
+
+.theme-toggle {
+  background-color: rgba(255, 255, 255, 0.8); /* Light background */
+}
+
+body.dark-mode .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight glow in dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .mobile-theme-toggle img {
+  filter: none; /* In dark mode, icon already suits dark background */
+  background-color: rgba(255, 255, 255, 0.15); /* Slight glow for clarity */
+}

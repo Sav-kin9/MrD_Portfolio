@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr. D | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/reps.css" />
+  <link rel="stylesheet" href="css/imports.css" />
+  <link rel="stylesheet" href="css/darkmode.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" id="favicon" />
+</head>
+<body>
+  <!-- ===== NAVBAR (Already includes scroll-trigger and toggle effects) ===== -->
+  <nav class="navbar">
+    <div class="container nav-wrapper">
+      <h1 class="logo">Mr. D</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <!-- DARK MODE TOGGLE -->
+    <div class="dark-toggle" id="darkToggle">
+        <img src="images/moon.svg" alt="Toggle Dark Mode" id="modeIcon" />
+    </div>
+
+
+  <!-- ===== PORTFOLIO HERO ===== -->
+  <header class="portfolio-hero fade-in">
+    <div class="overlay"></div>
+    <div class="hero-text-center">
+      <h1>My Portfolio</h1>
+      <p>Explore the work that defines my journey</p>
+    </div>
+  </header>
+
+  <!-- ===== DOWNLOAD CV SECTION ===== -->
+  <section class="download-cv-section fade-in">
+    <div class="container">
+      <h2>Download My CV & Portfolio</h2>
+      <p>Access my latest resume and detailed project portfolio below.</p>
+      <div class="download-buttons">
+        <a href="files/MrD-CV.pdf" target="_blank" download class="btn-dark">📄 Download CV</a>
+        <a href="files/MrD-Portfolio.pdf" download class="btn-dark">📁 Download Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECT SHOWCASE ===== -->
+  <section class="portfolio-grid fade-in">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="project-card slide-in">
+        <img src="images/vaulta-preview.jpg" alt="Vaulta Bank Preview" loading="lazy" />
+        <h4>Vaulta Bank</h4>
+        <p>Banking Website · Branding + UI/UX + Dev</p>
+        <a href="https://vaultabank.com" target="_blank" class="btn-emerald">View Project</a>
+      </div>
+
+      <div class="project-card slide-in">
+        <img src="images/abbies-preview.jpg" alt="Abbie's Clothing" loading="lazy" />
+        <h4>Abbie's Clothing</h4>
+        <p>Luxury Fashion Brand · Web + Identity</p>
+        <a href="#" class="btn-emerald">See More</a>
+      </div>
+
+      <div class="project-card slide-in">
+        <img src="images/booking-preview.jpg" alt="Service Apartment Site" loading="lazy" />
+        <h4>UrbanNest Bookings</h4>
+        <p>Service Apartment · UI/UX + Dev</p>
+        <a href="#" class="btn-emerald">Launch Site</a>
+      </div>
+
+      <!-- Add more projects here -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <p>&copy; <span id="year"></span> Mr. D. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><img src="images/instagram.svg" alt="Instagram" loading="lazy"></a>
+        <a href="#"><img src="images/linkedin.svg" alt="LinkedIn" loading="lazy"></a>
+        <a href="#"><img src="images/github.svg" alt="GitHub" loading="lazy"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS SCRIPTS (Effects Reused) ===== -->
+  <script src="js/portfolio.js"></script>
+</body>
+</html>

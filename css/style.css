@@ -203,48 +203,6 @@ body,
   background-color: #13162e;
 }
 
-/* ========DARK MODE TOGGLE BUTTON======== */
-
-/* === THEME TOGGLE BUTTON === */
-.theme-toggle {
-  position: fixed;
-  top: 1.2rem;
-  right: 1.5rem;
-  z-index: 1002;
-  cursor: pointer;
-  background-color: var(--color-soft-gray);
-  padding: 0.5rem;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease;
-}
-
-.theme-toggle img {
-  width: 24px;
-  height: 24px;
-}
-
-/* ========INSIDE MOBILE SIDE MENU======== */
-
-.mobile-theme-toggle {
-  text-align: left;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.mobile-theme-toggle img {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2); /* ✨ Light bg inside dark side nav */
-  border-radius: 50%;
-  padding: 6px;
-  filter: invert(1); /* Makes white icons dark */
-  transition: all 0.3s ease;
-}
-
 /* ========== HERO SECTION ========== */
 .hero-section {
   background-color: var(--color-navy);
@@ -612,3 +570,41 @@ body,
   transform: scale(1.05);
 }
 
+/* ========PORTFOLIO CSS======== */
+
+/* Button Consistency */
+.btn-dark {
+  background-color: var(--color-navy);
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #13162e;
+}
+
+/* ========PROJECT CARD STYLING======== */
+
+.project-card {
+  background-color: var(--color-soft-gray);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+.project-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
