@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ====== BASE STYLES ====== */
 :root {
   /* Colors */
@@ -19,6 +25,7 @@
 
 /* Base */
 body {
+  width: 100vw;
   font-family: var(--font-body);
   color: var(--color-dark-gray);
   background-color: var(--color-soft-gray);
@@ -27,6 +34,7 @@ body {
   line-height: 1.6;
   font-display: swap;
   transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,6 +81,11 @@ input:focus {
 .btn-dark {
   background-color: var(--color-navy);
   color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-self: center;
+  max-width: 150px;
 }
 
 .btn-dark:hover {
@@ -98,32 +111,10 @@ input:focus {
   animation: blink 1s step-start infinite;
 }
 
-/* Lazy loading */
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-img[loading="lazy"].loaded {
-  opacity: 1;
-}
-
-/* Service worker notification */
-.app-update {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--color-emerald);
-  color: white;
-  padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 10000;
-}
-
 /* ====== LAYOUT ====== */
 /* Navbar */
 .navbar {
+  width: 100vw;
   background-color: var(--color-soft-gray);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   padding: 1rem 2rem;
@@ -339,6 +330,7 @@ img[loading="lazy"].loaded {
 /* ====== SECTIONS ====== */
 /* Hero */
 .hero-section {
+  width: 100vw;
   background-color: var(--color-navy);
   color: var(--color-white);
   padding: 6rem 2rem;
@@ -389,6 +381,7 @@ img[loading="lazy"].loaded {
 
 /* Services */
 .services-section {
+  width: 100vw;
   padding: 4rem 2rem;
   background-color: var(--color-white);
   text-align: center;
@@ -428,6 +421,7 @@ img[loading="lazy"].loaded {
 
 /* Portfolio */
 .portfolio-preview {
+  width: 100vw;
   padding: 2rem 2rem;
   text-align: center;
 }
@@ -468,6 +462,7 @@ img[loading="lazy"].loaded {
 
 /* Testimonials */
 .testimonials-preview {
+  width: 100vw;
   background-color: var(--color-soft-gray);
   padding: 4rem 2rem;
   text-align: center;
@@ -490,6 +485,7 @@ img[loading="lazy"].loaded {
 
 /* CTA */
 .cta-section {
+  width: 100vw;
   background-color: var(--color-emerald);
   color: var(--color-white);
   padding: 4rem 2rem;
@@ -507,6 +503,7 @@ img[loading="lazy"].loaded {
 
 /* Footer */
 .site-footer {
+  width: 100vw;
   background-color: var(--color-navy);
   color: var(--color-white);
   padding: 2rem;

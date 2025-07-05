@@ -101,54 +101,6 @@ function initScrollEffects() {
   window.addEventListener("load", revealOnScroll);
 }
 
-// Service Worker
-function initServiceWorker() {
-  // Lazy loading
-  if ('IntersectionObserver' in window) {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    const lazyObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.add("loaded");
-          lazyObserver.unobserve(img);
-        }
-      });
-    });
-    lazyImages.forEach(img => lazyObserver.observe(img));
-  }
-
-  // Service Worker registration
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                showUpdateNotification();
-              }
-            });
-          });
-        })
-        .catch(err => console.error('ServiceWorker registration failed:', err));
-    });
-  }
-}
-
-function showUpdateNotification() {
-  const updateDiv = document.createElement('div');
-  updateDiv.className = 'app-update';
-  updateDiv.innerHTML = `
-    <p>New version available!</p>
-    <button>Update</button>
-  `;
-  updateDiv.querySelector('button').addEventListener('click', () => window.location.reload());
-  document.body.appendChild(updateDiv);
-}
-
 // Initialize everything when fonts are ready
 document.fonts.ready.then(() => {
   initTypingEffect();
