@@ -1,7 +1,7 @@
 // TYPING TEXT
 
 
-const text = "My Portfolio";
+const text = "My Portfolio ";
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
@@ -44,23 +44,22 @@ typeWriter();
   animatedElements.forEach(el => reObserver.observe(el));
 
 
-  // Mobile menu toggle
-const menuToggle = document.createElement('button');
-menuToggle.classList.add('menu-toggle');
-menuToggle.innerHTML = `
-  <div class="toggle-icon">
-    <span class="dot"></span>
-    <span class="dash"></span>
-    <span class="dot"></span>
-  </div>
-`;
-document.body.prepend(menuToggle);
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.side-nav');
+  const backdrop = document.querySelector('.menu-backdrop');
 
-const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  menuToggle.classList.toggle('active');
+  menuToggle.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+    });
+  }
 });
+
 
 // Dark mode toggle
 const darkToggle = document.getElementById('darkToggle');
@@ -70,12 +69,18 @@ const body = document.body;
 darkToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
   const isDarkMode = body.classList.contains('dark-mode');
-  modeIcon.src = isDarkMode ? 'images/sun-icon-light.svg' : 'images/moon-icon-light.svg';
+  modeIcon.src = isDarkMode ? 'images/sun-icon-dark.svg' : 'images/moon-icon-light.svg';
   localStorage.setItem('darkMode', isDarkMode);
 });
 
 // Check for saved dark mode preference
 if (localStorage.getItem('darkMode') === 'true') {
   body.classList.add('dark-mode');
-  modeIcon.src = 'images/sun-icon-light.svg';
+  modeIcon.src = 'images/sun-icon-dark.svg';
 }
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+});

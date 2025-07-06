@@ -3,59 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – Mr. D</title>
-  <meta name="description" content="Learn about Mr. D's journey from adversity to success as a web developer, brand strategist, and forex trader">
+  <meta name="description" content="Professional portfolio of Mr. D - Web Developer, Brand Strategist, and Forex Trader">
+  <meta name="keywords" content="web development, branding, forex trading, portfolio">
+  <meta name="author" content="Mr. D">
+  <title>About | Mr. D</title>
   <link rel="stylesheet" href="css/about.css" />
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!-- ANTON FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!--- MONTSERRAT FONT --->
 </head>
 <body>
-  <!-- Side Menu -->
-  <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-    <div class="toggle-icon">
-      <span class="dot"></span>
-      <span class="dash"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-
-  <nav class="side-nav" id="sideNav" aria-hidden="true">
-    <ul>
+  
+  <nav class="navbar" id="mainNavbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="navbar-brand">Mr. <span>D</span></a>
+    
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="login.html" class="btn-emerald">Login</a></li>
-      <li class="mobile-theme-toggle">
-        <button id="themeIconMobile" aria-label="Toggle theme">
-          <img src="images/moon-icon-light.svg" alt="" loading="lazy" />
-        </button>
-      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" class="btn-emerald">Contact</a></li>
     </ul>
-  </nav>
+    
+    <!-- Mobile Menu Toggle -->
+    <button id="menuToggle" class="menu-toggle">
+      <span class="toggle-icon dot"></span>
+      <span class="toggle-icon dash"></span>
+      <span class="toggle-icon dot"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Side Menu -->
+<nav id="sideNav" class="side-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- <div id="menuBackdrop" class="menu-backdrop"></div> -->
 
   <div class="menu-backdrop" id="menuBackdrop" tabindex="-1"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar" id="mainNavbar">
-    <div class="container nav-wrapper">
-      <h1 class="logo"><a href="index.html">Mr. D</a></h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html" class="btn-emerald">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <!-- Theme Toggle -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <img id="themeIcon" src="images/moon-icon-light.svg" alt="" />
-  </button>
+  <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <img id="themeIcon" src="images/moon-icon-light.svg" alt="Toggle Dark Mode" id="modeIcon" />
+  </button> -->
+
+  <!-- DARK MODE TOGGLE -->
+    <div class="dark-toggle" id="darkToggle">
+        <img src="images/moon-icon-light.svg" alt="Toggle Dark Mode" id="modeIcon" />
+    </div>
 
   <!-- Hero Section -->
   <header class="about-hero">
@@ -89,9 +97,9 @@
       <h2>Who I've Worked With</h2>
       <p>Over the years, I've collaborated with a wide range of individuals, startups, and firms across various industries — from tech and branding to financial markets.</p>
       <div class="clients-logos">
-        <img src="images/clients/project1.jpg" alt="Contour Trading Firm" loading="lazy" />
-        <img src="images/clients/project2.jpg" alt="Ryze Funded" loading="lazy" />
-        <img src="images/clients/project3.jpg" alt="Express Funded" loading="lazy" />
+        <img src="images/clients/contour.png" alt="Contour Trading Firm" loading="lazy" />
+        <img src="images/clients/ryze.png" alt="Ryze Funded" loading="lazy" />
+        <img src="images/clients/express.png" alt="Express Funded" loading="lazy" />
       </div>
     </section>
 
@@ -107,6 +115,18 @@
       <a href="contact.html" class="btn-dark">Let's Get You Started</a>
     </section>
   </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <p>&copy; <span id="year"></span> Mr. D. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><img src="images/instagram.svg" alt="Instagram" loading="lazy"></a>
+        <a href="#"><img src="images/linkedin.svg" alt="LinkedIn" loading="lazy"></a>
+        <a href="#"><img src="images/github.svg" alt="GitHub" loading="lazy"></a>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/about.js"></script>
 </body>

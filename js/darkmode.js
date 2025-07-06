@@ -1,6 +1,6 @@
 // ========DARK MODE TOGGLE BUTTON========
 
-const themeToggle = document.getElementById('themeToggle');
+const darkToggle = document.getElementById('darkToggle');
 const themeIcon = document.getElementById('themeIcon');
 const themeIconMobile = document.getElementById('themeIconMobile');
 
@@ -22,7 +22,7 @@ function toggleTheme() {
   setTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-themeToggle.addEventListener('click', toggleTheme);
+darkToggle.addEventListener('click', toggleTheme);
 if (themeIconMobile) themeIconMobile.addEventListener('click', toggleTheme);
 
 // Load user preference

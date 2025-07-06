@@ -82,34 +82,47 @@ p {
 }
 
 /* === Navigation === */
+/* ====== NAVBAR ====== */
+/* Navbar */
 .navbar {
+  width: 100%;
   background-color: var(--color-soft-gray);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-emerald);
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
+.navbar.scrolled {
+  background-color: var(--color-white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.6rem 2rem;
+}
+
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
+  font-weight: 700;
   color: var(--color-navy);
   text-decoration: none;
 }
 
 .nav-links {
-  display: flex;
   list-style: none;
-  gap: 1.5rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
@@ -117,8 +130,6 @@ p {
   font-weight: 500;
   color: var(--color-navy);
   transition: color 0.3s ease;
-  padding: 0.5rem 0;
-  position: relative;
 }
 
 .nav-links a:hover {
@@ -139,13 +150,123 @@ p {
   background-color: var(--color-emerald);
 }
 
-/* Mobile Menu Toggle */
+/* Side Menu */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  width: 70%;
+  height: 100vh;
+  background-color: var(--color-navy);
+  padding: 4rem 2rem;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.side-nav ul li {
+  margin-bottom: 2rem;
+}
+
+.side-nav ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.side-nav ul li a:hover {
+  color: var(--color-emerald);
+}
+
 .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   z-index: 1001;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 1rem;
+}
+
+.menu-toggle .toggle-icon {
+  display: block;
+  background-color: var(--color-navy);
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle span {
+  display: block;
+  background-color: var(--color-navy);
+}
+
+/* Dot and Dash Styling */
+.toggle-icon.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-navy);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-icon.dash {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--color-navy);
+  transition: transform 0.3s ease;
+}
+
+.menu-open .side-nav {
+  transform: translateX(0);
+}
+
+/* Animate on menu open */
+body.menu-open .toggle-icon.dash {
+  transform: rotate(90deg);
+}
+
+body.menu-open .toggle-icon.dot {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-open .side-nav {
+  left: 0;
+}
+
+.menu-open .menu-backdrop {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* === Dark Mode Toggle === */
@@ -204,6 +325,16 @@ p {
   z-index: 2;
   color: var(--color-white);
   padding: 0 1rem;
+}
+
+.hero-text-center h1 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 3rem;
 }
 
 /* TYPING TEXT ANIMATION */
@@ -411,8 +542,17 @@ body.dark-mode {
 
 /* === Responsive Design === */
 @media (max-width: 992px) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+  }
+
   .nav-links {
+    flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
   }
   
   .portfolio-grid {
@@ -422,7 +562,7 @@ body.dark-mode {
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: flex;
   }
   
   .nav-links {

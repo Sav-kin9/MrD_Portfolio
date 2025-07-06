@@ -107,5 +107,4 @@ document.fonts.ready.then(() => {
   initTiltEffect();
   initMenu();
   initScrollEffects();
-  initServiceWorker();
 });
