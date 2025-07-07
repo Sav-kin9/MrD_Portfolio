@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== EMAILJS INIT =====
+  emailjs.init('ZETG9S75RfVYgyWch'); // Public key
+
   // ===== SELECTORS =====
   const contactForm = document.getElementById('contactForm');
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const submitBtn = contactForm?.querySelector('button[type="submit"]');
   const toastContainer = document.getElementById('toastContainer');
   const menuToggle = document.getElementById('menuToggle');
   const sideNav = document.getElementById('sideNav');
@@ -9,29 +12,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const darkToggle = document.getElementById('darkToggle');
   const modeIcon = document.getElementById('modeIcon');
 
-  // ===== FORM SUBMISSION USING EMAILJS =====
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  // ===== FORM SUBMISSION =====
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!submitBtn) return;
 
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      // UI Feedback
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    emailjs.sendForm('service_iczioje', 'template_x6renqc', contactForm)
-      .then(() => {
+      try {
+        const response = await emailjs.sendForm(
+          'service_iczioje', 
+          'template_x6re', // Template ID from your screenshot
+          contactForm
+        );
+        
         showToast('Message sent successfully!', 'success');
         contactForm.reset();
-      })
-      .catch(() => {
-        showToast('Failed to send. Please try again.', 'error');
-      })
-      .finally(() => {
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        showToast(`Failed to send: ${error.text || 'Please try again'}`, 'error');
+      } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<span class="btn-text">Send Message</span><i class="fas fa-paper-plane"></i>';
-      });
-  });
+      }
+    });
+  }
 
-  // ===== TOAST FUNCTION =====
+  // ===== TOAST NOTIFICATIONS =====
   function showToast(message, type) {
+    if (!toastContainer) return;
+    
     const toast = document.createElement('div');
     toast.className = `toast toast-${type}`;
     toast.textContent = message;
@@ -53,27 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.form-group, .contact-card').forEach(el => observer.observe(el));
-
-  // ===== MENU TOGGLE =====
-  menuToggle.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
+  document.querySelectorAll('.form-group, .contact-card').forEach(el => {
+    if (el) observer.observe(el);
   });
 
-  backdrop.addEventListener('click', () => {
-    document.body.classList.remove('menu-open');
-  });
+  // ===== MOBILE MENU TOGGLE =====
+  if (menuToggle && backdrop) {
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('menu-open');
+    });
+
+    backdrop.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+    });
+  }
 
   // ===== DARK MODE TOGGLE =====
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+  if (darkToggle && modeIcon) {
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      modeIcon.src = isDark ? 'images/sun-icon-dark.svg' : 'images/moon-icon-light.svg';
+      
+      // Optional: Save preference to localStorage
+      localStorage.setItem('darkMode', isDark);
+    });
 
-    const isDark = document.body.classList.contains('dark-mode');
-    modeIcon.src = isDark ? 'images/sun-icon-dark.svg' : 'images/moon-icon-light.svg';
-  });
+    // Optional: Load saved preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      modeIcon.src = 'images/sun-icon-dark.svg';
+    }
+  }
 });
-
-// ===== EMAILJS INIT =====
-(function() {
-  emailjs.init('ZETG9S75RfVYgyWch'); // Your public key
-})();
