@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const response = await emailjs.sendForm(
           'service_iczioje', 
-          'template_x6re', // Template ID from your screenshot
+          'template_x6renqc', // Template ID from your screenshot
           contactForm
         );
         
