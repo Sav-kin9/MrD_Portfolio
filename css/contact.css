@@ -1,0 +1,688 @@
+/* === CSS Variables === */
+:root {
+  --color-navy: #1a1f38;
+  --color-emerald: #00b386;
+  --color-white: #ffffff;
+  --color-soft-gray: #f8f9fa;
+  --color-dark-gray: #6c757d;
+  --color-secondary-text: #555;
+  --font-heading: 'Anton', sans-serif;
+  --font-heading2: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: #333;
+  background-color: var(--color-soft-gray);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* === Buttons === */
+.btn-emerald, .btn-dark {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: var(--font-heading2);
+  letter-spacing: 0.5px;
+}
+
+.btn-emerald {
+  background-color: var(--color-emerald);
+  color: var(--color-white);
+  box-shadow: 0 6px 12px rgba(0, 179, 134, 0.25);
+}
+
+.btn-emerald:hover {
+  background-color: #009e76;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 179, 134, 0.35);
+}
+
+.btn-dark {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn-dark:hover {
+  background-color: #13162e;
+  transform: translateY(-2px);
+}
+
+/* === NAVIGATION === */
+.navbar {
+  width: 100%;
+  background-color: var(--color-soft-gray);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid var(--color-emerald);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: var(--color-white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.6rem 2rem;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar-brand {
+  font-family: var(--font-heading2);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-navy);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-emerald);
+}
+
+.nav-links a.active {
+  color: var(--color-emerald);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-emerald);
+}
+
+/* === Side Navigation === */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  width: 70%;
+  height: 100vh;
+  background-color: var(--color-navy);
+  padding: 4rem 2rem;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.side-nav ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.side-nav ul li {
+  margin-bottom: 2rem;
+}
+
+.side-nav ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.side-nav ul li a:hover {
+  color: var(--color-emerald);
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background: transparent;
+  border: none;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 1rem;
+}
+
+.menu-toggle .toggle-icon {
+  display: block;
+  background-color: var(--color-navy);
+  transition: all 0.3s ease;
+}
+
+.toggle-icon.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.toggle-icon.dash {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+body.menu-open .side-nav {
+  transform: translateX(0);
+}
+
+body.menu-open .menu-backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-open .toggle-icon.dash {
+  transform: rotate(90deg);
+}
+
+body.menu-open .toggle-icon.dot {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* === DARK MODE TOGGLE === */
+.dark-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.1);
+}
+
+.dark-toggle img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+/* === CONTACT HERO === */
+.contact-hero {
+  background: linear-gradient(135deg, #1B1F3B 0%, #00B386 100%);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* === CONTACT SECTION === */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.form-column {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-emerald);
+  transition: width 0.3s ease;
+}
+
+.contact-form input:focus ~ .underline,
+.contact-form textarea:focus ~ .underline,
+.contact-form select:focus ~ .underline {
+  width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-bottom-color: transparent;
+}
+
+.contact-form button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.5rem;
+  font-weight: 600;
+}
+
+.contact-form button i {
+  transition: transform 0.3s ease;
+}
+
+.contact-form button:hover i {
+  transform: translateX(6px);
+}
+
+/* === INFO COLUMN === */
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 179, 134, 0.15);
+}
+
+.contact-card .card-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--color-emerald);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card .card-icon i {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-navy);
+}
+
+.contact-card a,
+.contact-card p {
+  color: var(--color-secondary-text);
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: var(--color-emerald);
+}
+
+/* === FOOTER === */
+.site-footer {
+  background: var(--color-navy);
+  color: var(--color-white);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-wrapper p {
+  font-family: var(--font-heading2);
+}
+
+/* === SOCIAL ICON STYLES (Base Light Mode) === */
+
+.site-footer p {
+  margin-bottom: 1rem;
+  color: var(--color-soft-gray);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8) saturate(1.2);
+}
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .form-column,
+  .info-column {
+    padding: 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* === DARK MODE ENHANCEMENTS === */
+body.dark-mode {
+  background-color: #0e0f1a;
+  color: #f0f0f0;
+}
+
+/* Form background stays clean and dark */
+body.dark-mode .form-column,
+body.dark-mode .contact-card {
+  background-color: #1a1f38;
+  color: var(--color-white);
+}
+
+/* Inputs, selects, and textareas */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  color: #ffffff;
+  background-color: transparent;
+  border-bottom: 1px solid #444;
+  transition: border-color 0.3s ease;
+}
+
+/* When focused */
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-bottom-color: var(--color-emerald);
+}
+
+/* Premium Placeholder Text */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder,
+body.dark-mode select option[disabled] {
+  color: #9fa5b5; /* soft luxury gray */
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Underline animation */
+body.dark-mode .underline {
+  background-color: var(--color-emerald);
+}
+
+/* Labels */
+body.dark-mode .contact-form label {
+  color: #e0e0e0;
+}
+
+/* Contact cards */
+body.dark-mode .contact-card a,
+body.dark-mode .contact-card p {
+  color: #cccccc;
+}
+
+body.dark-mode .contact-card a:hover {
+  color: var(--color-emerald);
+}
+
+body.dark-mode input:focus::placeholder,
+body.dark-mode textarea:focus::placeholder {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+
+
+/* === FOOTER IN DARK MODE === */
+body.dark-mode .site-footer {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .site-footer p {
+  color: #dddddd;
+}
+
+body.dark-mode .social-icons img {
+  filter: brightness(0) invert(1); /* Turn icons white */
+}
+
+body.dark-mode .social-icons a:hover img {
+  filter: brightness(1.5) saturate(1.5);
+}
+
+/* FOR FORM DROPDOWN */
+
+/* === FORM SELECT DROPDOWN IN DARK MODE === */
+body.dark-mode select {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #444;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 16px;
+  padding-right: 2rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+body.dark-mode select:focus {
+  outline: none;
+  border-bottom-color: var(--color-emerald);
+}
+
+body.dark-mode select option {
+  background-color: #1a1f38;
+  color: #f0f0f0;
+}
+
+body.dark-mode select option:hover {
+  background-color: #00b386;
+  color: #ffffff;
+}
+
+
+
+/* === TOAST STYLES === */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.toast {
+  min-width: 280px;
+  max-width: 90%;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-heading2);
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.4s ease;
+  text-align: center;
+  font-size: 0.95rem;
+  pointer-events: auto;
+}
+
+.toast-success {
+  background-color: var(--color-emerald);
+  color: #fff;
+}
+
+.toast-error {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
