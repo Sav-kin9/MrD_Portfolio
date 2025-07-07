@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== SELECTORS =====
   const contactForm = document.getElementById('contactForm');
   const submitBtn = contactForm.querySelector('button[type="submit"]');
   const toastContainer = document.getElementById('toastContainer');
@@ -8,37 +9,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const darkToggle = document.getElementById('darkToggle');
   const modeIcon = document.getElementById('modeIcon');
 
-  const FORMSPREE_URL = 'https://formspree.io/f/meokwbpo';
-
-  // ===== FORM SUBMISSION =====
+  // ===== FORM SUBMISSION USING EMAILJS =====
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 6px;"></i> Sending...';
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    try {
-      const response = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(contactForm)
-      });
-
-      if (response.ok) {
+    emailjs.sendForm('service_iczioje', 'template_x6renqc', contactForm)
+      .then(() => {
         showToast('Message sent successfully!', 'success');
         contactForm.reset();
-      } else {
-        throw new Error('Failed to send');
-      }
-    } catch (error) {
-      showToast('Failed to send. Please try again.', 'error');
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span class="btn-text">Send Message</span><i class="fas fa-paper-plane"></i>';
-    }
+      })
+      .catch(() => {
+        showToast('Failed to send. Please try again.', 'error');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span class="btn-text">Send Message</span><i class="fas fa-paper-plane"></i>';
+      });
   });
 
-  // ===== SHOW TOAST =====
+  // ===== TOAST FUNCTION =====
   function showToast(message, type) {
     const toast = document.createElement('div');
     toast.className = `toast toast-${type}`;
@@ -52,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   }
 
-  // ===== SCROLL ANIMATION =====
+  // ===== SCROLL ANIMATIONS =====
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -61,9 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.form-group, .contact-card').forEach(el => {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.form-group, .contact-card').forEach(el => observer.observe(el));
 
   // ===== MENU TOGGLE =====
   menuToggle.addEventListener('click', () => {
@@ -78,8 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
   darkToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 
-    // Change icon
     const isDark = document.body.classList.contains('dark-mode');
     modeIcon.src = isDark ? 'images/sun-icon-dark.svg' : 'images/moon-icon-light.svg';
   });
 });
+
+// ===== EMAILJS INIT =====
+(function() {
+  emailjs.init('ZETG9S75RfVYgyWch'); // Your public key
+})();
