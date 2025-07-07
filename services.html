@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio of Mr. D - Web Developer, Brand Strategist, and Forex Trader">
+  <meta name="keywords" content="web development, branding, forex trading, portfolio">
+  <meta name="author" content="Mr. D">
+  <title>Services | Mr. D</title>
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar" id="mainNavbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="navbar-brand">Mr. <span>D</span></a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Menu Toggle -->
+    <button id="menuToggle" class="menu-toggle">
+      <span class="toggle-icon dot"></span>
+      <span class="toggle-icon dash"></span>
+      <span class="toggle-icon dot"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Side Menu -->
+<nav id="sideNav" class="side-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+  </ul>
+  <div class="mobile-theme-toggle">
+    <button id="mobileDarkToggle">
+      <img src="images/moon-icon-light.svg" alt="Toggle Dark Mode" />
+    </button>
+  </div>
+</nav>
+
+<div id="menuBackdrop" class="menu-backdrop"></div>
+
+<!-- Dark/Light Mode Toggle -->
+<div class="dark-toggle" id="darkToggle">
+  <img src="images/moon-icon-light.svg" alt="Toggle Dark Mode" id="modeIcon" />
+</div>
+
+<!-- Hero Section -->  
+<section class="services-hero">
+  <div class="hero-content">
+    <h1>What I Offer</h1>
+    <p>Premium services that elevate your brand, build your presence, and empower your trading journey.</p>
+    <a href="#services" class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Services Cards Section -->
+<section class="services-section" id="services">
+  <div class="section-header">
+    <h2>My Services</h2>
+    <p>Swipe left/right to explore</p>
+  </div>
+  <div class="container services-grid">
+    <div class="service-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Forex Training</h3>
+          <p>Master the art of trading with technical and strategic guidance.</p>
+          <button class="flip-btn">View More</button>
+        </div>
+        <div class="card-back">
+          <img src="images/forex.jpg" alt="Forex Training">
+          <div class="card-overlay">
+            <h4>Forex Training</h4>
+            <p>Build skills. Build income. Learn the markets.</p>
+            <button class="flip-back-btn">Back to Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Forex Technical Analysis</h3>
+          <p>Unlock the markets using structure and data.</p>
+          <button class="flip-btn">View More</button>
+        </div>
+        <div class="card-back">
+          <img src="images/analysis.jpg" alt="Analysis">
+          <div class="card-overlay">
+            <h4>Technical Analysis</h4>
+            <p>Stay ahead of price with real technicals.</p>
+            <button class="flip-back-btn">Back to Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon"><i class="fas fa-trademark"></i></div>
+          <h3>Brand Creation</h3>
+          <p>Shape a vision that speaks and sells.</p>
+          <button class="flip-btn">View More</button>
+        </div>
+        <div class="card-back">
+          <img src="images/branding.jpg" alt="Brand Creation">
+          <div class="card-overlay">
+            <h4>Brand Creation</h4>
+            <p>Create a brand identity that commands attention.</p>
+            <button class="flip-back-btn">Back to Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon"><i class="fas fa-code"></i></div>
+          <h3>Web Development</h3>
+          <p>Custom websites that convert visitors into customers.</p>
+          <button class="flip-btn">View More</button>
+        </div>
+        <div class="card-back">
+          <img src="images/web-dev.jpg" alt="Web Development">
+          <div class="card-overlay">
+            <h4>Web Development</h4>
+            <p>Pixel-perfect, responsive websites that perform.</p>
+            <button class="flip-back-btn">Back to Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Marketing Strategy</h3>
+          <p>Data-driven campaigns that deliver results.</p>
+          <button class="flip-btn">View More</button>
+        </div>
+        <div class="card-back">
+          <img src="images/marketing.jpg" alt="Marketing Strategy">
+          <div class="card-overlay">
+            <h4>Marketing Strategy</h4>
+            <p>Reach the right audience with precision.</p>
+            <button class="flip-back-btn">Back to Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="card-icon"><i class="fas fa-comments"></i></div>
+          <h3>Communication</h3>
+          <p>Clear messaging that connects with your audience.</p>
+          <button class="flip-btn">View More</button>
+        </div>
+        <div class="card-back">
+          <img src="images/communication.jpg" alt="Communication">
+          <div class="card-overlay">
+            <h4>Communication</h4>
+            <p>Engage your audience with compelling content.</p>
+            <button class="flip-back-btn">Back to Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section">
+  <div class="section-header">
+    <h2>Simple Pricing</h2>
+    <p>Choose the plan that fits your needs</p>
+  </div>
+  
+  <div class="container pricing-grid">
+    <!-- Starter Plan -->
+    <div class="pricing-card" data-plan="starter">
+      <div class="pricing-content">
+        <h3>Starter</h3>
+        <div class="price">₦25,000</div>
+        <div class="features">
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> 3 Forex Signals Weekly</li>
+            <li><i class="fas fa-check-circle"></i> Basic Trade Analysis</li>
+            <li><i class="fas fa-check-circle"></i> Email Support</li>
+            <li><i class="fas fa-check-circle"></i> Access to 2 Weekly Webinars</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricing-overlay">
+        <button class="pricing-cta">Get It Now</button>
+      </div>
+    </div>
+    
+    <!-- Pro Plan -->
+    <div class="pricing-card" data-plan="pro">
+      <div class="pricing-content">
+        <h3>Pro</h3>
+        <div class="price">₦50,000</div>
+        <div class="features">
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Daily Forex Signals</li>
+            <li><i class="fas fa-check-circle"></i> Advanced Trade Breakdowns</li>
+            <li><i class="fas fa-check-circle"></i> Priority Support</li>
+            <li><i class="fas fa-check-circle"></i> Private Telegram Group</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricing-overlay">
+        <button class="pricing-cta">Get It Now</button>
+      </div>
+    </div>
+    
+    <!-- Elite Plan -->
+    <div class="pricing-card" data-plan="elite">
+      <div class="pricing-content">
+        <h3>Elite</h3>
+        <div class="price">₦100,000</div>
+        <div class="features">
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> 24/7 Signal Alerts</li>
+            <li><i class="fas fa-check-circle"></i> 1-on-1 Coaching</li>
+            <li><i class="fas fa-check-circle"></i> Trade Plan Review</li>
+            <li><i class="fas fa-check-circle"></i> VIP Live Sessions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricing-overlay">
+        <button class="pricing-cta">Get It Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Build or Trade Better?</h2>
+    <p>Let's turn your vision into a thriving brand or a powerful trading career.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-emerald">Start Now</a>
+      <a href="portfolio.html" class="btn-outline">See My Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-brand">Mr. <span>D</span></a>
+        <p>Elevating brands and trading skills to new heights.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> hello@mrd.com</li>
+          <li><i class="fas fa-phone"></i> +234 123 456 7890</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Mr. D. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/services.js"></script>
+</body>
+</html>

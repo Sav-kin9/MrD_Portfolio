@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio of Mr. D - Web Developer, Brand Strategist, and Forex Trader">
+  <meta name="keywords" content="web development, branding, forex trading, portfolio">
+  <meta name="author" content="Mr. D">
+  <title>Portfolio | Mr. D</title>
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!-- ANTON FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!--- MONTSERRAT FONT --->
+</head>
+<body>
+
+
+  <!-- ===== NAVBAR (Already includes scroll-trigger and toggle effects) ===== -->
+  <nav class="navbar" id="mainNavbar">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="navbar-brand">Mr. <span>D</span></a>
+    
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Menu Toggle -->
+    <button id="menuToggle" class="menu-toggle">
+      <span class="toggle-icon dot"></span>
+      <span class="toggle-icon dash"></span>
+      <span class="toggle-icon dot"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Side Menu -->
+<nav id="sideNav" class="side-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+  </ul>
+</nav>
+
+  <div class="menu-backdrop" id="menuBackdrop" tabindex="-1"></div>
+
+    <!-- DARK MODE TOGGLE -->
+    <div class="dark-toggle" id="darkToggle">
+        <img src="images/moon-icon-light.svg" alt="Toggle Dark Mode" id="modeIcon" loading="lazy" />
+    </div>
+
+
+  <!-- ===== PORTFOLIO HERO ===== -->
+  <header class="portfolio-hero">
+    <div class="overlay"></div>
+    <div class="hero-text-center">
+      <h1 id="dynamic-text"></h1>
+      <p>Explore the work that defines my journey</p>
+    </div>
+  </header>
+
+  <!-- ===== DOWNLOAD CV SECTION ===== -->
+  <section class="download-cv-section fade-in">
+    <div class="container">
+      <h2>Download My CV & Portfolio</h2>
+      <p>Access my latest resume and detailed project portfolio below.</p>
+      <div class="download-buttons">
+        <a href="files/cv.pdf" target="_blank" download class="btn-dark">📄 Download CV</a>
+        <a href="files/MrD-Portfolio.pdf" download class="btn-dark">📁 Download Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECT SHOWCASE ===== -->
+  <section class="portfolio-grid fade-in">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="project-card slide-in">
+        <img src="images/vaulta-preview.jpg" alt="Vaulta Bank Preview" loading="lazy" />
+        <h4>Vaulta Bank</h4>
+        <p>Banking Website · Branding + UI/UX + Dev</p>
+        <a href="https://vaulta-bank.vercel.app" target="_blank" class="btn-emerald">View Project</a>
+      </div>
+
+      <div class="project-card slide-in">
+        <img src="images/mr_d.jpg" alt="Abbie's Clothing" loading="lazy" />
+        <h4>Abbie's Clothing</h4>
+        <p>Luxury Fashion Brand · Web + Identity</p>
+        <a href="" class="btn-emerald">See More</a>
+      </div>
+
+      <div class="project-card slide-in">
+        <img src="images/urbannest.jpg" alt="Service Apartment Site" loading="lazy" />
+        <h4>UrbanNest Shortlet Bookings</h4>
+        <p>Service Apartment · UI/UX + Dev</p>
+        <a href="https://urban-nest-vert-nu.vercel.app" class="btn-emerald">Launch Site</a>
+      </div>
+
+      <!-- Add more projects here -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <p>&copy; <span id="year"></span> Mr. D. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><img src="images/instagram.svg" alt="Instagram" loading="lazy"></a>
+        <a href="#"><img src="images/linkedin.svg" alt="LinkedIn" loading="lazy"></a>
+        <a href="#"><img src="images/github.svg" alt="GitHub" loading="lazy"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS SCRIPTS (Effects Reused) ===== -->
+  <script src="js/portfolio.js"></script>
+</body>
+</html>

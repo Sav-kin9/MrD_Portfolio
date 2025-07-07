@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio of Mr. D - Web Developer, Brand Strategist, and Forex Trader">
+  <meta name="keywords" content="web development, branding, forex trading, portfolio">
+  <meta name="author" content="Mr. D">
+  <title>Mr. D | Creative Web Developer & Brand Strategist</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!-- ANTON FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"> <!--- MONTSERRAT FONT --->
+</head>
+<body>
+
+    <nav class="navbar" id="mainNavbar">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="navbar-brand">Mr. <span>D</span></a>
+    
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Menu Toggle -->
+    <button id="menuToggle" class="menu-toggle">
+      <span class="toggle-icon dot"></span>
+      <span class="toggle-icon dash"></span>
+      <span class="toggle-icon dot"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Side Menu -->
+<nav id="sideNav" class="side-nav">
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html" class="btn-emerald">Contact</a></li>
+  </ul>
+</nav>
+
+<div id="menuBackdrop" class="menu-backdrop"></div>
+
+    <!-- Dark/Light Mode Toggle -->
+    <div class="dark-toggle" id="darkToggle">
+        <img src="images/moon-icon-light.svg" alt="Toggle Dark Mode" id="modeIcon"/>
+    </div>
+
+  <!-- Hero Section -->
+<header class="hero-section">
+  <div class="container hero-wrapper">
+    <!-- Left: Text -->
+    <div class="hero-text">
+      <h2 id="typing-text"></h2>
+      <p>Creative Web Developer + Brand Strategist + Forex Trader</p>
+      <a href="portfolio.html" class="btn-dark arrow-btn">
+        See My Work
+        <span class="circle-arrow slide-in-right fade-in">
+            <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="11" stroke="#fff"/>
+            <polyline points="10 8 14 12 10 16" stroke="#fff"/>
+            </svg>
+        </span>
+      </a>
+
+
+    </div>
+
+    <!-- Right: Image with tilt -->
+    <div class="hero-image" id="tilt-container">
+      <img src="images/MRD.jpg" alt="Mr. D professional portrait" id="tilt-image"/>
+    </div>
+
+  </div>
+</header>
+
+  <!-- Services Preview -->
+  <section class="services-section">
+    <div class="container">
+      <h3>What I Do</h3>
+      <div class="services-grid">
+        <div class="service-card slide-in-left">
+          <h4>Web Design</h4>
+          <p>Clean, responsive websites for brands and businesses.</p>
+        </div>
+        <div class="service-card fade-in">
+          <h4>Brand Strategy</h4>
+          <p>Complete identity development to position your brand.</p>
+        </div>
+        <div class="service-card slide-in-right">
+          <h4>Smart Trading</h4>
+          <p>Proven forex strategies with real-time insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Preview -->
+  <section class="portfolio-preview fade-in">
+    <div class="container">
+      <h3>Featured Projects</h3>
+      <div class="portfolio-grid">
+        <div class="project-card">
+          <img src="images/urbannest.jpg" alt="UrbanNest Booking Site Project"/>
+          <h4>UrbanNest Booking Site</h4>
+        </div>
+        <div class="project-card">
+          <img src="images/vaultabank.jpg" alt="VaultaBank Banking Project"/>
+          <h4>Vaulta Banking Site</h4>
+        </div>
+        <div class="project-card">
+          <img src="images/mr_d.jpg" alt="Mr. D Portfolio Website"/>
+          <h4>Personal Branding Kit</h4>
+        </div>
+      </div>
+      <a href="portfolio.html" class="btn-emerald">See More</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Preview -->
+  <section class="testimonials-preview fade-in">
+    <div class="container">
+      <h3>What Clients Say</h3>
+      <blockquote>
+        “Mr. D gave my brand life and my business a digital presence I never imagined.”
+        <cite>– Jessica Ade, Founder</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Let’s Build Your Brand</h2>
+      <p>Ready to transform your ideas into elite digital experiences?</p>
+      <a href="contact.html" class="btn-dark">Book a Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-wrapper">
+      <p>&copy; 2025 Mr. D. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><img src="images/ig.svg" alt="Instagram"/></a>
+        <a href="#"><img src="images/x.svg" alt="Twitter"/></a>
+        <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"/></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/darkmode.js"></script>
+</body>
+</html>
